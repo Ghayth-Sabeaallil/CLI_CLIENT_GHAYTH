@@ -39,7 +39,9 @@ async function postSignup(name, email, username, birthday, password) {
       console.log(chalk.green(`Signup Seccesfully!`));
       main();
     } else {
-      console.log(chalk.red(`Something went wrong, try again!`));
+      console.log(
+        chalk.red(`Something went wrong, try again!  ${response.body}`)
+      );
       main();
     }
   });

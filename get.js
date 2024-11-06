@@ -11,8 +11,8 @@ export async function get() {
     data.map((event) => {
       eventsList.push({ name: event.name, value: event._id });
     });
-    eventsList.push("Create event +");
     eventsList.push("<< Back");
+    eventsList.push(new inquirer.Separator("-- End of List --"));
     askToSelectEvent();
   } catch (error) {
     console.error(error.message);
@@ -25,7 +25,6 @@ export function askToSelectEvent() {
     if (answers.choice === "<< Back") {
       session.shift();
       main();
-    } else if (answers.choice === "Create event +") {
     } else {
       getEvent(answers.choice);
     }

@@ -32,7 +32,9 @@ async function postLogin(username, password) {
       session.push(username);
       get();
     } else {
-      console.log(chalk.red(`Something went wrong, try again!`));
+      console.log(
+        chalk.red(`Something went wrong, try again! ${response.body}`)
+      );
       main();
     }
   });
